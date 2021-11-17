@@ -96,6 +96,7 @@ const { length } = students
 for (let i = 0; i < length; i++) {
   const student = students[i]
   const { math, physics, chemistry } = student.grades
+  // student["grades"]["math"] = student.grades.math
   mathTotal += math
   physTotal += physics
   chemTotal += chemistry
