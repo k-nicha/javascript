@@ -6,7 +6,7 @@ const rectangle = {
 }
 
 // definicija na f-ja
-function calculateArea (shape) {
+function calculateArea(shape) {
   return shape.width * shape.height
 }
 
@@ -28,9 +28,9 @@ const team = {
 }
 
 // definicija na f-jata
-function totalPoints (team) {
+function totalPoints(team) {
   const { wins, losses, draws } = team
-  return wins*3 + losses*-1 + draws
+  return wins * 3 + losses * -1 + draws
 }
 
 // povik na f-jata
@@ -42,7 +42,7 @@ console.log(`Timot ima osvoeno: ${totalPoints(team)} poeni`)
 // broj na pracinja.
 // Brojot na parcinja i brojot na lugje se parametri na funkcijata
 
-function isItDivisible (nbSlices, nbPeople) {
+function isItDivisible(nbSlices, nbPeople) {
   if (isNaN(nbSlices) || isNaN(nbPeople) || nbSlices < 1 || nbPeople < 1) {
     return 'Parameters must be valid numbers'
   }
@@ -56,7 +56,7 @@ console.log(isItDivisible(10, 4))
 // Znaete deka patuvanjeto od zurka do doma ve kostalo 300 denari. 
 // Da se napise funkcija koja sto ke presmeta kolku kilometri ste izminale
 
-function calculateKilometers (price) {
+function calculateKilometers(price) {
   const start = 50
   const next = 20
   let kilometers = 0
@@ -80,9 +80,42 @@ console.log(calculateKilometers(300))
 // Slogot se definira kako sekvenca od karakteri koi zavrsuvaat so samoglaska.
 // PRIMERI = ["A" "E" "RO" "DRO" "M"], ["PRI", "ME", "R"], ["SHTRK"], ["SLO", "N"]
 
-
-function findSyllables (word) {
-  
+function findSyllables(word) {
+  const regEx = /(?<=[aeiou])/i
+  return word.split(regEx)
 }
 
-findSyllables('test')
+function findSyllables2(word) {
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  const arr = word.split('')
+  const syllables = []
+
+  for (let i = 0; i < arr.length; i++) {
+    const character = arr[i]
+    if (
+      vowels.includes(character.toLowerCase())
+      || i === arr.length - 1
+    ) {
+      syllables.push(character)
+    } else {
+      let substr = character
+      for (let j = i + 1; j < arr.length; j++) {
+        const nextChar = arr[j]
+        substr = substr + nextChar
+        if (
+          vowels.includes(nextChar.toLowerCase())
+          || (j === arr.length - 1)
+        ) {
+          i += j - i
+          syllables.push(substr)
+          break
+        }
+      }
+    }
+  }
+  return syllables
+}
+
+
+console.log(findSyllables2('aerodrom'))
+
