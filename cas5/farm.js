@@ -8,7 +8,7 @@ const myAnimals = [
   { type: 'Chicken', numberOfLegs: 2 },
   { type: 'Fish', numberOfLegs: 0 },
   { type: 'Dog', age: 7, numberOfLegs: 4 },
-  { type: 'Goat', numberOfLegs: 4}
+  { type: 'Goat', numberOfLegs: 4 }
 ]
 
 const calculateLegs = (animals) => {
