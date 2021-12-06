@@ -1,0 +1,14 @@
+<html>
+  <head></head>
+  <body></body>
+  <script>
+    const username = sessionStorage.getItem('username')
+
+    const header = document.createElement('h1')
+    const message = `Welcome ${username}`
+    header.innerText = message
+
+    // add the header to the body element
+    document.getElementsByTagName('body')[0].prepend(header)
+  </script>
+</html>

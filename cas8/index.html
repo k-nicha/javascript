@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  
+  <body>
+    <form id="form" style="display: flex; flex-direction: column; width: 25%;" onsubmit="disablePageReload(event)">
+      <input id="username" placeholder="Username" type="text" oninput="usernameChanged(event)">
+      <input id="password" placeholder="Password" type="password" oninput="passwordChanged(event)">
+      <button onclick="login()">Log In</button>
+    </form>
+  </body>
+  
+  <script src="login.js"></script>
+</html>
