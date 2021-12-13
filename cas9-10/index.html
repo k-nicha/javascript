@@ -35,12 +35,18 @@
         <th></th>
       </thead>
 
-      <tbody id="allBooks">
-        
-      </tbody>
     </table>
+
+    <button onclick="deleteAll()">Delete All</button>
   </body>
 
   <script src="table.js"></script>
   <script src="submit.js"></script>
+  <script>
+    function deleteAll () {
+      localStorage.clear()
+      localStorage.setItem('books', JSON.stringify([]))
+      displayTableRows()
+    }
+  </script>
 </html>
