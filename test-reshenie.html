@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+<style>
+  .small {
+    height: 50px;
+    background-color: aquamarine;
+    margin-bottom: 10px;
+  }
+
+  .width-sm {
+    width: 300px
+  }
+</style>
+
+<body>
+  <p>
+    PRASANJA: 
+
+    1) - 4
+    2) - 1
+    3) - 4
+    4) - 3
+    5) - 1
+    6) - 2
+    7) - 2
+    8) - 3
+    9) - 1
+    10) - 2
+  </p>
+
+  <div class="small"></div>
+  <div class="small"></div>
+  <div class="small"></div>
+
+  <button onclick="applyStyles()">Apply styles</button>
+</body>
+
+<script>
+  function applyStyles() {
+    const elements = document.querySelectorAll('.small')
+    // moze da gi selektirate i so document.getElementsByClassName('small')
+    
+    // prv nachin
+    elements.forEach(element => {
+      element.style = 'width: 300px'
+    })
+
+    // vtor nachin
+    elements.forEach(element => {
+      element.classList.add('width-sm')
+    })
+
+  }
+</script>
+
+</html>
